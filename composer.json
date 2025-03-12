@@ -1,4 +1,5 @@
 {
+    "version": "0.0.1",
     "name": "wimdevgroup/proxmoxve-api",
     "description": "A composer package for the Proxmox Virtual Environment API",
     "type": "libary",
