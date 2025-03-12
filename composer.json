@@ -1,0 +1,29 @@
+{
+    "name": "wimdevgroup/proxmoxve-api",
+    "description": "A composer package for the Proxmox Virtual Environment API",
+    "type": "libary",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wim Wenigerkind Development Group",
+            "email": "info@wimdev.group",
+            "homepage": "https://wimdev.group",
+            "role": "Organization"
+        },
+        {
+            "name": "Wim Wenigerkind",
+            "email": "wenigerkind.wim@outlook.de",
+            "homepage": "https://wimwenigerkind.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wimdevgroup\\ProxmoxveApi\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "symfony/http-client": "^7.2"
+    }
+}
