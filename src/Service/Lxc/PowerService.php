@@ -2,6 +2,7 @@
 
 namespace Wimdevgroup\ProxmoxveApi\Service\Lxc;
 
+use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Wimdevgroup\ProxmoxveApi\Service\AuthenticationClientService;
 
 class PowerService
@@ -20,6 +21,7 @@ class PowerService
      * @param string $node
      * @param int $vmid
      * @return string
+     * @throws TransportExceptionInterface
      */
     public function start(string $node, int $vmid): string
     {
@@ -32,6 +34,7 @@ class PowerService
      * @param string $node
      * @param int $vmid
      * @return string
+     * @throws TransportExceptionInterface
      */
     public function stop(string $node, int $vmid): string
     {
@@ -44,6 +47,7 @@ class PowerService
      * @param string $node
      * @param int $vmid
      * @return string
+     * @throws TransportExceptionInterface
      */
     public function reboot(string $node, int $vmid): string
     {

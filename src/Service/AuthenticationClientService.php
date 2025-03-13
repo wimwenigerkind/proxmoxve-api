@@ -2,6 +2,7 @@
 
 namespace Wimdevgroup\ProxmoxveApi\Service;
 
+use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
@@ -26,7 +27,7 @@ class AuthenticationClientService
      * @param string $method
      * @param string $url
      * @return string
-     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
+     * @throws TransportExceptionInterface
      */
     public function request(string $method, string $url): string
     {
@@ -48,7 +49,7 @@ class AuthenticationClientService
      *
      * @param string $url
      * @return string
-     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
+     * @throws TransportExceptionInterface
      */
     public function get(string $url): string
     {
@@ -60,7 +61,7 @@ class AuthenticationClientService
      *
      * @param string $url
      * @return string
-     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
+     * @throws TransportExceptionInterface
      */
     public function post(string $url): string
     {
@@ -72,7 +73,7 @@ class AuthenticationClientService
      *
      * @param string $url
      * @return string
-     * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
+     * @throws TransportExceptionInterface
      */
     public function delete(string $url): string
     {
