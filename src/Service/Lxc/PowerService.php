@@ -12,7 +12,8 @@ class PowerService
     public function __construct
     (
         AuthenticationClientService $authenticationClientService
-    ) {
+    )
+    {
         $this->authenticationClientService = $authenticationClientService;
     }
 

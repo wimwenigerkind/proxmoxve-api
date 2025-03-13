@@ -17,9 +17,10 @@ class AuthenticationClientService
 
     public function __construct
     (
-        HttpClientInterface $client,
+        HttpClientInterface  $client,
         ConfigurationService $configurationService
-    ) {
+    )
+    {
         $this->httpClient = $client;
         $this->authHeader = sprintf('PVEAPIToken=%s', $configurationService->getPveApiToken());
     }
