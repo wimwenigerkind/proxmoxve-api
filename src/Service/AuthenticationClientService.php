@@ -2,6 +2,9 @@
 
 namespace Wimdevgroup\ProxmoxveApi\Service;
 
+use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
+use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
+use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
@@ -27,6 +30,9 @@ class AuthenticationClientService
      * @param string $method
      * @param string $url
      * @return string
+     * @throws ClientExceptionInterface
+     * @throws RedirectionExceptionInterface
+     * @throws ServerExceptionInterface
      * @throws TransportExceptionInterface
      */
     public function request(string $method, string $url): string
@@ -86,6 +92,10 @@ class AuthenticationClientService
      * @param ResponseInterface $response
      * @param string $method
      * @return string
+     * @throws TransportExceptionInterface
+     * @throws ClientExceptionInterface
+     * @throws RedirectionExceptionInterface
+     * @throws ServerExceptionInterface
      */
     private function handleResponse(ResponseInterface $response, string $method): string
     {
