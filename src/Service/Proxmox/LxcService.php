@@ -8,8 +8,10 @@ class LxcService
 {
     private AuthenticationClientService $authenticationClientService;
 
-    public function __construct(AuthenticationClientService $authenticationClientService)
-    {
+    public function __construct
+    (
+        AuthenticationClientService $authenticationClientService
+    ) {
         $this->authenticationClientService = $authenticationClientService;
     }
 
