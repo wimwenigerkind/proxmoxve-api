@@ -1,10 +1,10 @@
 <?php
 
-namespace Wimdevgroup\ProxmoxveApi\Service\Proxmox;
+namespace Wimdevgroup\ProxmoxveApi\Service\Qemu;
 
 use Wimdevgroup\ProxmoxveApi\Service\AuthenticationClientService;
 
-class LxcService
+class PowerService
 {
     private AuthenticationClientService $authenticationClientService;
 
@@ -23,7 +23,7 @@ class LxcService
      */
     public function start(string $node, int $vmid): string
     {
-        $url = sprintf('/api2/extjs/nodes/%s/lxc/%s/status/start', $node, $vmid);
+        $url = sprintf('/api2/extjs/nodes/%s/qemu/%s/status/start', $node, $vmid);
         return $this->authenticationClientService->post($url);
     }
 
@@ -35,7 +35,7 @@ class LxcService
      */
     public function stop(string $node, int $vmid): string
     {
-        $url = sprintf('/api2/extjs/nodes/%s/lxc/%s/status/stop', $node, $vmid);
+        $url = sprintf('/api2/extjs/nodes/%s/qemu/%s/status/stop', $node, $vmid);
         return $this->authenticationClientService->post($url);
     }
 
@@ -47,7 +47,7 @@ class LxcService
      */
     public function reboot(string $node, int $vmid): string
     {
-        $url = sprintf('/api2/extjs/nodes/%s/lxc/%s/status/reboot', $node, $vmid);
+        $url = sprintf('/api2/extjs/nodes/%s/qemu/%s/status/reboot', $node, $vmid);
         return $this->authenticationClientService->post($url);
     }
 }
