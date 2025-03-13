@@ -9,17 +9,20 @@ class AuthenticationClientService
 {
     private HttpClientInterface $httpClient;
     private string $authHeader;
+    private ConfigurationService $configurationService;
 
     public function __construct
     (
         HttpClientInterface $client,
-        ConfigurationService $configuration
+        ConfigurationService $configurationService
     ) {
         $this->httpClient = $client;
-        $this->authHeader = sprintf('PVEAPIToken=%s', $configuration->getPveApiToken());
+        $this->authHeader = sprintf('PVEAPIToken=%s', $configurationService->getPveApiToken());
     }
 
     /**
+     * Sends an HTTP request.
+     *
      * @param string $method
      * @param string $url
      * @return string
@@ -40,7 +43,9 @@ class AuthenticationClientService
     }
 
     /**
+     *
      * Method GET
+     *
      * @param string $url
      * @return string
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
@@ -52,6 +57,7 @@ class AuthenticationClientService
 
     /**
      * Method POST
+     *
      * @param string $url
      * @return string
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
@@ -63,6 +69,7 @@ class AuthenticationClientService
 
     /**
      * Method DELETE
+     *
      * @param string $url
      * @return string
      * @throws \Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface
@@ -73,7 +80,8 @@ class AuthenticationClientService
     }
 
     /**
-     * Handle response
+     * Handles the HTTP response.
+     *
      * @param ResponseInterface $response
      * @param string $method
      * @return string
